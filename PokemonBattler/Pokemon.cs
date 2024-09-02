@@ -14,4 +14,18 @@ public class Pokemon
         AttackDamage = attackDamage;
         Move = move;
     }
+
+    public void TakeDamage(int damage)
+    {
+        HitPoints -= damage;
+    }
+
+    public int UseMove()
+    {
+        Console.WriteLine($"{Name} used {Move}");
+        return AttackDamage;
+    }
+
+    public bool HasFainted() => HitPoints <= 0;
+    
 }
