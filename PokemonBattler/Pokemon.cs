@@ -29,7 +29,7 @@ public abstract class Pokemon
     }
 
     public bool HasFainted() => HitPoints <= 0;
-    
+
     public virtual bool IsEffectiveAgainst(Pokemon pokemon)
     {
         return false;
@@ -43,10 +43,10 @@ public abstract class Pokemon
 
 public class Fire : Pokemon
 {
-    public override string Type { get;} = "fire";
+    public override string Type { get; } = "fire";
 
-    public Fire(string name, int hitPoints, int attackDamage, string move = "tackle") 
-        : base(name, hitPoints, attackDamage, move){ }
+    public Fire(string name, int hitPoints, int attackDamage, string move = "tackle")
+        : base(name, hitPoints, attackDamage, move) { }
 
     public override bool IsEffectiveAgainst(Pokemon pokemon)
     {
@@ -61,10 +61,10 @@ public class Fire : Pokemon
 
 public class Grass : Pokemon
 {
-    public override string Type { get;} = "grass";
+    public override string Type { get; } = "grass";
 
-    public Grass(string name, int hitPoints, int attackDamage, string move = "tackle") 
-        : base(name, hitPoints, attackDamage, move){ }
+    public Grass(string name, int hitPoints, int attackDamage, string move = "tackle")
+        : base(name, hitPoints, attackDamage, move) { }
 
     public override bool IsEffectiveAgainst(Pokemon pokemon)
     {
@@ -79,10 +79,10 @@ public class Grass : Pokemon
 
 public class Water : Pokemon
 {
-    public override string Type { get;} = "water";
+    public override string Type { get; } = "water";
 
-    public Water(string name, int hitPoints, int attackDamage, string move = "tackle") 
-        : base(name, hitPoints, attackDamage, move){ }
+    public Water(string name, int hitPoints, int attackDamage, string move = "tackle")
+        : base(name, hitPoints, attackDamage, move) { }
 
     public override bool IsEffectiveAgainst(Pokemon pokemon)
     {
@@ -97,9 +97,9 @@ public class Water : Pokemon
 
 public class Normal : Pokemon
 {
-    public override string Type { get;} = "normal";
+    public override string Type { get; } = "normal";
 
-    public Normal(string name, int hitPoints, int attackDamage, string move = "tackle") 
-        : base(name, hitPoints, attackDamage, move){ }
+    public Normal(string name, int hitPoints, int attackDamage, string move = "tackle")
+        : base(name, hitPoints, attackDamage, move) { }
 
 }
