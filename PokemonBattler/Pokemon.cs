@@ -1,6 +1,6 @@
 ﻿namespace PokemonBattler;
 
-public class Pokemon
+public abstract class Pokemon
 {
     public string Name;
     public int HitPoints;
@@ -9,7 +9,7 @@ public class Pokemon
     public virtual string Type { get; } = "normal";
 
 
-    public Pokemon(string name, int hitPoints, int attackDamage, string move = "tackle")
+    public Pokemon(string name, int hitPoints, int attackDamage, string move)
     {
         Name = name;
         HitPoints = hitPoints;

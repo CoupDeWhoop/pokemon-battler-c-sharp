@@ -2,10 +2,6 @@ namespace PokemonBattler.Tests;
 
 public class PokemonTests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
 
     [Test]
     public void pokemon_properties_create_correctly()
@@ -15,7 +11,7 @@ public class PokemonTests
         int expectedAttackDamage = 50;
         string expectedMove = "Thunderbolt";
 
-        var pokemon = new Pokemon(expectedName, expectedHitPoints, expectedAttackDamage, expectedMove);
+        var pokemon = new Normal(expectedName, expectedHitPoints, expectedAttackDamage, expectedMove);
 
         Assert.That(pokemon.Name, Is.EqualTo(expectedName));
         Assert.That(pokemon.HitPoints, Is.EqualTo(expectedHitPoints));
@@ -30,7 +26,7 @@ public class PokemonTests
         int expectedHitPoints = 100;
         int expectedAttackDamage = 50;
 
-        var pokemon = new Pokemon(expectedName, expectedHitPoints, expectedAttackDamage);
+        var pokemon = new Normal(expectedName, expectedHitPoints, expectedAttackDamage);
 
         Assert.That(pokemon.Name, Is.EqualTo(expectedName));
         Assert.That(pokemon.HitPoints, Is.EqualTo(expectedHitPoints));
@@ -41,7 +37,7 @@ public class PokemonTests
     [Test]
     public void TakeDamage_reducesHitPointsCorrectly()
     {
-        var pokemon = new Pokemon("Pikachu", 80, 20, "Thunderbolt");
+        var pokemon = new Fire("Pikachu", 80, 20, "Thunderbolt");
 
         pokemon.TakeDamage(10);
 
@@ -51,7 +47,7 @@ public class PokemonTests
     [Test]
     public void UseMove_returnsAttackDamage()
     {
-        var pokemon = new Pokemon("Pikachu", 80, 20, "Thunderbolt");
+        var pokemon = new Grass("Pikachu", 80, 20, "Thunderbolt");
 
         var damage = pokemon.UseMove();
 
@@ -61,7 +57,7 @@ public class PokemonTests
     [Test]
     public void HasFainted_returnsFalse_IfHitpointsAboveZero()
     {
-        var pokemon = new Pokemon("Pikachu", 80, 20, "Thunderbolt");
+        var pokemon = new Water("Pikachu", 80, 20, "Thunderbolt");
 
         var hasFainted = pokemon.HasFainted();
 
@@ -72,7 +68,7 @@ public class PokemonTests
     [TestCase(100)]
     public void HasFainted_returnsTrue_IfHitpointsZero(int damage)
     {
-        var pokemon = new Pokemon("Pikachu", 80, 20, "Thunderbolt");
+        var pokemon = new Normal("Pikachu", 80, 20, "Thunderbolt");
 
         pokemon.TakeDamage(damage);
         var hasFainted = pokemon.HasFainted();
