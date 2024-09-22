@@ -6,8 +6,6 @@ public abstract class Pokemon
     public int HitPoints { get; set; }
     public int AttackDamage { get; set; }
     public string Move { get; set; }
-    public virtual string Type { get; } = "normal";
-
 
     public Pokemon(string name, int hitPoints, int attackDamage, string move)
     {
@@ -30,8 +28,8 @@ public abstract class Pokemon
 
     public bool HasFainted() => HitPoints <= 0;
 
-    public abstract bool IsEffectiveAgainst(Pokemon pokemon);
+    public abstract bool IsEffectiveAgainst(Pokemon opponent);
 
-    public abstract bool IsWeakTo(Pokemon pokemon);
+    public abstract bool IsWeakTo(Pokemon opponent);
 
 }

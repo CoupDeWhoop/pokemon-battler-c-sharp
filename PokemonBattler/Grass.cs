@@ -2,18 +2,16 @@ namespace PokemonBattler;
 
 public class Grass : Pokemon
 {
-    public override string Type { get; } = "grass";
-
     public Grass(string name, int hitPoints, int attackDamage, string move = "tackle")
         : base(name, hitPoints, attackDamage, move) { }
 
-    public override bool IsEffectiveAgainst(Pokemon pokemon)
+    public override bool IsEffectiveAgainst(Pokemon opponent)
     {
-        return pokemon.Type == "water";
+        return opponent is Water;
     }
 
-    public override bool IsWeakTo(Pokemon pokemon)
+    public override bool IsWeakTo(Pokemon opponent)
     {
-        return pokemon.Type == "fire";
+        return opponent is Fire;
     }
 }
