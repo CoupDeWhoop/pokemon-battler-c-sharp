@@ -2,7 +2,7 @@
 
 public abstract class Pokemon
 {
-    public string Name { get; set; }
+    public string Name { get; }
     public int HitPoints { get; set; }
     public int AttackDamage { get; set; }
     public string Move { get; set; }
@@ -19,7 +19,7 @@ public abstract class Pokemon
 
     public void TakeDamage(int damage)
     {
-        HitPoints -= damage;
+        HitPoints = Math.Max(0, HitPoints - damage); // won't go below zero
     }
 
     public int UseMove()
