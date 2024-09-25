@@ -45,6 +45,18 @@ public class PokemonTests
     }
 
     [Test]
+    public void TakeDamage_doesNotGoBelowZero()
+    {
+        var pokemon = new Fire("Pikachu", 10, 20, "Thunderbolt");
+
+        pokemon.TakeDamage(10);
+        pokemon.TakeDamage(10);
+        pokemon.TakeDamage(10);
+
+        Assert.That(pokemon.HitPoints, Is.EqualTo(0));
+    }
+
+    [Test]
     public void UseMove_returnsAttackDamage()
     {
         var pokemon = new Grass("Pikachu", 80, 20, "Thunderbolt");
