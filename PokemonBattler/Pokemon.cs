@@ -31,5 +31,4 @@ public abstract class Pokemon
     public abstract bool IsEffectiveAgainst(Pokemon opponent);
 
     public abstract bool IsWeakTo(Pokemon opponent);
-
 }
